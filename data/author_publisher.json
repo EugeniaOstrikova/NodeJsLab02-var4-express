@@ -1,0 +1,5 @@
+[{"authorId":1,"publisherId":1,"dateOfJoin":"","salary":100},
+  {"authorId":2,"publisherId":1,"dateOfJoin":"2019-05-29T11:30:12.857Z","salary":200},
+  {"authorId":3,"publisherId":2,"dateOfJoin":"2019-06-04T12:12:16.744Z","salary":130},
+  {"authorId":2,"publisherId":3,"dateOfJoin":"2019-06-04T13:05:37.929Z","salary":300},
+  {"authorId":2,"publisherId":2,"dateOfJoin":"2019-06-04T13:28:34.506Z","salary":230}]
