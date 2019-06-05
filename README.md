@@ -3,7 +3,7 @@ Homework 2. Express.
 
 Application to make http request with json data.
 ## API
-localhost:8088
+localhost:8080
 #### Authors
 Get authors:
 ```
@@ -38,9 +38,23 @@ Get publishers for author by id, with total salary:
 GET /authors/:authorId/publishers
 ```
 #### Publishers
+Get publishers:
+```
+GET /publishers
+```
+Create publisher:
+```
+POST /publishers
+```
+{"name": "string"}
+
 Get publisher by id:
 ```
 GET /publishers/:publisherId
+```
+Remove publisher by id:
+```
+DELETE /publishers/:publisherId
 ```
 Remove author from publisher:
 ```

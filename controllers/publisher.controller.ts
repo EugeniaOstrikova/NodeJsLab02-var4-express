@@ -16,8 +16,20 @@ export class PublisherController implements IPublisherController{
         this.authorPublisherService = new AuthorPublisherService();
     }
 
+    public getPublishers():IPublisher[] {
+        return this.publisherService.getPublishers();
+    }
+
+    public addPublisher(publisherName: string): IPublisher {
+        return this.publisherService.addPublisher(publisherName);
+    }
+
     public getPublisherById(publisherId: number): IPublisher {
         return this.publisherService.getById(publisherId);
+    }
+
+    public removePublisher(publisherId: number): void {
+        this.publisherService.removePublisher(publisherId);
     }
 
     public removeAuthor(authorId: number, publisherId: number): void {

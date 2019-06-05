@@ -7,6 +7,39 @@ import {IAuthors} from "../services/AuthorPublisherService/authorPublisher.inter
 const router = express.Router();
 const publisherController: IPublisherController = new PublisherController();
 
+router.get("", (req, res, next) => {
+    try {
+        const publishers: IPublisher[] = publisherController.getPublishers();
+
+        res.json(publishers);
+    } catch (error) {
+        next(error);
+    }
+});
+
+router.post("", (req, res, next) => {
+    try {
+        const publisherName: string = req.body.name;
+        const publisher: IPublisher = publisherController.addPublisher(publisherName);
+
+        res.json(publisher);
+
+    } catch (error) {
+        next(error);
+    }
+});
+
+router.delete("/:id", (req, res, next) => {
+    try {
+        const publisherId: number = +req.params.id;
+        publisherController.removePublisher(publisherId);
+
+        res.send("Done");
+    } catch (error) {
+        next(error);
+    }
+});
+
 router.get("/:id", (req, res, next) => {
     try {
         const publisherId: number = +req.params.id;
