@@ -17,8 +17,20 @@ export class AuthorController implements IAuthorController{
         this.authorPublisherService = new AuthorPublisherService();
     }
 
+    public getAuthors(): IAuthor[] {
+        return this.authorService.getAuthors();
+    }
+
     public getAuthorById(authorId: number): IAuthor {
         return this.authorService.getById(authorId);
+    }
+
+    public addAuthor(authorName: string): IAuthor {
+        return this.authorService.addAuthor(authorName);
+    }
+
+    public removeAuthor(authorId: number): void {
+        this.authorService.removeAuthor(authorId);
     }
 
     public addPublisher(authorId: number, publisherId: number, salary: number): void {

@@ -6,6 +6,38 @@ import {IPublishers} from "../services/AuthorPublisherService/authorPublisher.in
 const router = express.Router();
 const authorController: AuthorController = new AuthorController();
 
+router.get("", (req, res, next) => {
+    try {
+        const authors: IAuthor[] = authorController.getAuthors();
+
+        res.json(authors);
+    } catch (error) {
+        next(error);
+    }
+});
+
+router.post("", (req, res, next) => {
+    try {
+        const authorName: string = req.body.name;
+        const author: IAuthor = authorController.addAuthor(authorName);
+
+        res.json(author);
+    } catch (error) {
+        next(error);
+    }
+});
+
+router.delete("/:id", (req, res, next) => {
+    try {
+        const authorId: number = +req.params.id;
+
+        authorController.removeAuthor(authorId);
+        res.send("Done");
+    } catch (error) {
+        next(error);
+    }
+});
+
 router.get("/:id", (req, res, next) => {
     try {
         const authorId: number = +req.params.id;

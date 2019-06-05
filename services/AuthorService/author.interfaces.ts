@@ -4,9 +4,15 @@ export interface IAuthor {
 }
 
 export interface IAuthorService {
+    getAuthors(): IAuthor[];
+    addAuthor(authorName: string): IAuthor;
+    removeAuthor(authorId: number): void;
     getById(authorId: number): IAuthor;
 }
 
 export interface IAuthorDal {
+    getAuthors(): IAuthor[];
+    addAuthor(author: IAuthor): void;
+    removeAuthor(authorId: number): void;
     getById(authorId: number): IAuthor | null;
 }

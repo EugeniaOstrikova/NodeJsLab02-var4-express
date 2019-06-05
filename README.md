@@ -1,16 +1,34 @@
 # NodeJsLab02-var4-express
 Homework 2. Express.
+
 Application to make http request with json data.
 ## API
+localhost:8088
 #### Authors
+Get authors:
+```
+GET /authors
+```
+Create author:
+```
+POST /authors
+```
+{"name": "string"}
+
 Get author by id:
 ```
 GET /authors/:authorId
+```
+Remove author by id:
+```
+DELETE /authors/:authorId
 ```
 Add publisher for author by id:
 ```
 POST /authors/:authorId/publishers/:publisherId
 ```
+{"salary": "number"}
+
 Remove publisher for author by id:
 ```
 DELETE /authors/:authorId/publishers/:publisherId
